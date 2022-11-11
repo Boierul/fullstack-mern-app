@@ -1,17 +1,23 @@
+require('dotenv').config();
+const colors = require('colors')
+
 const express = require('express')
 const {graphqlHTTP} = require('express-graphql')
+
+const connectDB = require('./config/db')
 
 const schema = require('./schema/schema')
 const port = process.env.PORT || 5000
 const app = express()
 
-// GraphiQL (like POSTMAN but for GQL)should be set to process.env.NODE_ENV === 'development' instead of true,
-// in order to set the env var of the project. But the thing is not working,
-// even with dotenv lib.
 
+// Conncect to DB
+connectDB()
+
+// GraphiQL (like POSTMAN but for GQL) lib.
 app.use('/graphql', graphqlHTTP({
     schema,
-    graphiql: true,
+    graphiql: process.env.NODE_ENV,
 }))
 
 app.listen(port, () => {

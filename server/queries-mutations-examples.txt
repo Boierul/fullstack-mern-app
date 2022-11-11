@@ -1,0 +1,77 @@
+<------------------->
+    Get all clients
+<------------------->
+
+{
+  clients
+  {
+    id,
+    name,
+    email,
+    phone
+  }
+}
+
+
+
+<------------------->
+  Get a client by ID
+<------------------->
+
+{
+  client(id:"1") {
+    id,
+    name,
+    email,
+    phone
+  }
+}
+
+
+
+<------------------->
+    Get all projects
+<------------------->
+
+{
+  projects
+  {
+    id,
+    name,
+    description,
+    status,
+
+  }
+}
+
+/* Updated the query to include a list of clients */
+{
+  projects
+  {
+    id,
+    name,
+    description,
+    status,
+    client {
+      name,
+      phone,
+      email
+    }
+  }
+}
+
+
+
+<------------------->
+  Get a project by ID
+<------------------->
+
+{
+  project(id: "1")
+  {
+    id,
+    name,
+    description,
+    status
+  }
+}

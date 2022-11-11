@@ -75,3 +75,99 @@
     status
   }
 }
+
+
+<------------------->
+  Create a client
+<------------------->
+
+mutation {
+  addClient(name:"Dan", email:"dan@email.com", phone:"222-222-222") {
+    id,
+    name,
+    email,
+    phone
+  }
+}
+
+or
+
+mutation AddClient($name:String!, $email:String!, $phone:String!) {
+  addClient(name: $name, email:$email, phone:$phone) {
+    id
+    name
+    email
+    phone
+  }
+}
+
+with these demo variables:
+{
+  "name": "Daniel",
+  "email": "daniel@email.com",
+  "phone": "228-228-228"
+}
+
+
+
+<------------------->
+  Update a client
+<------------------->
+
+mutation {
+  updateClient(id:"636e6bd5ba144546ce3c2739", name:"Luffy", email:"mdl@onepiece.jp", phone:"229-228-228"){
+    name,
+    phone,
+    email
+  }
+}
+
+or
+
+mutation UpdateClient($id:ID!,$name:String!, $email:String!, $phone:String!) {
+  updateClient(id: $id,name:$name, email:$email, phone:$phone){
+    id,
+    name,
+    phone,
+    email
+  }
+}
+
+with these demo variables:
+{
+  "id":"636e6bd5ba144546ce3c2739",
+  "name":"Luffy22",
+  "email":"mdl@onepiece.jp",
+  "phone":"229-228-228"
+}
+
+
+<------------------->
+  Delete a client
+<------------------->
+
+Ex: "636e80ae5b505898a12fadcf"
+mutation {
+  deleteClient(id:"<insert client Id>") {
+    id,
+    name,
+    phone,
+    email
+  }
+}
+
+or
+
+mutation DeleteClient($id:ID!){
+  deleteClient(id:$id) {
+    id,
+    name,
+    phone,
+    email
+  }
+}
+
+with these demo variables:
+{
+  "id": "636e80aa5b505898a12fadcd"
+}

@@ -136,7 +136,7 @@ mutation UpdateClient($id:ID!,$name:String!, $email:String!, $phone:String!) {
 with these demo variables:
 {
   "id":"636e6bd5ba144546ce3c2739",
-  "name":"Luffy22",
+  "name":"Luffy",
   "email":"mdl@onepiece.jp",
   "phone":"229-228-228"
 }
@@ -170,4 +170,98 @@ mutation DeleteClient($id:ID!){
 with these demo variables:
 {
   "id": "636e80aa5b505898a12fadcd"
+}
+
+<------------------->
+  Create a project
+<------------------->
+
+
+mutation {
+  addProject(name: "Mobile App", description: "This is the project description", status:new, clientId: "636e6bd5ba144546ce3c2739") {
+   name
+   description
+  }
+}
+
+or
+
+mutation AddProject($name:String!, $description:String!, $status:ProjectStatus!, $clientId:ID!) {
+  addProject(name:$name, description:$description, status:$status, clientId:$clientId){
+    id
+    name
+    description
+    status
+  }
+}
+
+with these demo variables:
+{
+  "clientId": "636e6bd5ba144546ce3c2739",
+  "name": "Web Application GraphQL",
+  "description": "Full stack implementation with GQL.",
+  "status": "progress"
+}
+
+
+
+<------------------->
+  Update a project
+<------------------->
+
+
+mutation {
+  updateProject(id:"636e9fb4905c35f3b5cb4c9e", name:"Changed Name", description:"Updated", status: completed) {
+    name,
+    description,
+    status
+  }
+}
+
+or
+
+mutation UpdateProject($id:ID!, $name:String!, $description:String!, $status:ProjectStatusUpdate!) {
+  updateProject(id:$id, name:$name, description:$description, status: $status) {
+    name,
+    description,
+    status
+  }
+}
+
+with these demo variables:
+{
+  "id":"636e9fb4905c35f3b5cb4c9e",
+  "name":"Changed Again The Name",
+  "description":"Updated again",
+  "status": "completed"
+}
+
+
+
+<------------------->
+  Delete a project
+<------------------->
+
+mutation {
+  deleteProject(id:"636e97e855e81e2be0a57619") {
+    name,
+    description,
+    status
+  }
+}
+
+
+or
+
+mutation DeleteProject($id:ID!) {
+  deleteProject(id:$id) {
+    name,
+    description,
+    status
+  }
+}
+
+with these demo variables:
+{
+  "id": "636e9fb4905c35f3b5cb4c9e"
 }

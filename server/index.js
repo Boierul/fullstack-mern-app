@@ -3,6 +3,7 @@ const colors = require('colors')
 
 const express = require('express')
 const {graphqlHTTP} = require('express-graphql')
+const cors = require('cors')
 
 const connectDB = require('./config/db')
 
@@ -13,6 +14,9 @@ const app = express()
 
 // Conncect to DB
 connectDB()
+
+// Middleware
+app.use(cors())
 
 // GraphiQL (like POSTMAN but for GQL) lib.
 app.use('/graphql', graphqlHTTP({

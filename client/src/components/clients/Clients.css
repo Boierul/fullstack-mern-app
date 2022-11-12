@@ -1,0 +1,34 @@
+.clients-list {
+    padding: 2rem;
+    justify-items: center;
+}
+
+.clients-the-list {
+    border: 1px solid #df3ca6;
+    width: 100%;
+}
+
+.clients-the-list-caption {
+    color: #df3ca6;
+}
+
+th,
+td {
+    padding: 1.1rem;
+}
+
+tbody {
+    color: #9d2977;
+}
+
+.thead-container {
+    color: whitesmoke;
+    background: #df3ca6;
+}
+
+.client-list-header {
+    color: #df3ca6;
+    font-family: "Raleway ExtraBold", sans-serif;
+    padding: 1rem;
+}
+

@@ -1,5 +1,5 @@
 .clients-list {
-    padding: 2rem;
+    padding: 4rem;
     justify-items: center;
 }
 
@@ -15,7 +15,9 @@
 th,
 td {
     padding: 1.1rem;
+    text-align: center;
 }
+
 
 tbody {
     color: #9d2977;
@@ -29,6 +31,6 @@ tbody {
 .client-list-header {
     color: #df3ca6;
     font-family: "Raleway ExtraBold", sans-serif;
-    padding: 1rem;
+    padding: 0.5rem 0;
 }
 

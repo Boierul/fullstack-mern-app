@@ -4,7 +4,7 @@ import './Header.css'
 export default function Header() {
   return (
     <nav>
-      <div className='header-class'>
+      <div className='header-section'>
         <a className='navbar-brand' href='/'>
           <div className='d-flex'>
             <img src={logo} alt='logo' className='mr-4' />

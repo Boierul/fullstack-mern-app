@@ -1,10 +1,31 @@
 import Header from "./components/header/Header";
 import {ApolloProvider, ApolloClient, InMemoryCache} from '@apollo/client';
 import Clients from "./components/clients/Clients";
+import AddClientModal from "./components/clients/addclient/AddClientModal";
+
+// Implemented in order to save the changes during UX
+const cache = new InMemoryCache({
+    typePolicies: {
+        Query: {
+            fields: {
+                clients: {
+                    merge(existing, incoming) {
+                        return incoming;
+                    },
+                },
+                projects: {
+                    merge(existing, incoming) {
+                        return incoming;
+                    },
+                },
+            },
+        },
+    },
+});
 
 const client = new ApolloClient({
     uri: 'http://localhost:5000/graphql',
-    cache: new InMemoryCache()
+    cache: cache
 });
 
 function App() {
@@ -12,6 +33,7 @@ function App() {
         <>
             <ApolloProvider client={client}>
                 <Header/>
+                <AddClientModal/>
                 <Clients />
             </ApolloProvider>
         </>

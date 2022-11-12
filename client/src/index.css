@@ -17,7 +17,7 @@ code {
 }
 
 .navbar-brand:hover {
-  color: #af3294;
+  color: #be43a2;
 }
 
 .navbar-brand img {
@@ -40,13 +40,16 @@ code {
   opacity: 0.9;
 }
 
+
 .btn-secondary {
-  background-color: #7430f9;
+  background-color: #df3ca6;
+  border: 1px solid #df3ca6;
 }
 
 .btn-secondary:hover {
   background-color: #7430f9;
   opacity: 0.9;
+  border: 1px solid #6d27f6;
 }
 
 .icon {

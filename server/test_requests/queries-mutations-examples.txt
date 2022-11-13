@@ -27,6 +27,21 @@
   }
 }
 
+or
+
+query GetClientById($id:ID!) {
+  client(id:$id) {
+    id,
+    name,
+    email,
+    phone
+  }
+}
+
+with this var:
+{
+  "id": "636fe8bdf73c8d6bd82da0f6"
+}
 
 
 <------------------->

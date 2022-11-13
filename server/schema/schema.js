@@ -11,7 +11,6 @@ const {
     GraphQLNonNull,
     GraphQLEnumType
 } = require('graphql')
-const {extendSchemaImpl} = require("graphql/utilities/extendSchema");
 
 // Client type -> set all the field of the requested GQL obj
 const ClientType = new GraphQLObjectType({
@@ -25,6 +24,7 @@ const ClientType = new GraphQLObjectType({
 })
 
 // Project type -> set all the field of the requested GQL obj
+// The type:ClientType is custom and will be dynamically fetched with the request
 const ProjectType = new GraphQLObjectType({
     name: 'Project',
     fields: () => ({
@@ -33,10 +33,9 @@ const ProjectType = new GraphQLObjectType({
         description: {type: GraphQLString},
         status: {type: GraphQLString},
         client: {
-            // The type is custom and will be dynamically fetched with the request
             type: ClientType,
             resolve(parent, args) {
-                return Client.findById(parent.id)
+                return Client.findById(parent.clientId)
             }
         }
     })

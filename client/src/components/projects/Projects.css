@@ -1,0 +1,10 @@
+.projects-list-header {
+    color: #df3ca6;
+    font-family: "Raleway ExtraBold", sans-serif;
+    padding: 0.5rem 0;
+}
+
+.projects-list {
+    padding: 4rem;
+    justify-items: center;
+}

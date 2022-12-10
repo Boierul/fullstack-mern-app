@@ -1,0 +1,72 @@
+MERN stack -> {
+    MongoDB - persistence
+    Express - backend framework
+    React.js - frontend framework
+    Node.js - runtime
+}
+
+[----------------------]
+ What each lib will do:
+[----------------------]
+
+   <------->
+    Backend
+   <------->
+
+    Node.js - runtime
+    Express - backend framework
+    Mongoose - MongoDB management solution
+    JWT - authentication/authorization
+    Multer - file upload
+    Body Parser - tool to process the request body
+    BCrypt - password encryption
+    Cors - cross-origin requests (to the internet basically)
+    Dotenv - environment variables access
+    GridFS-Stream - file upload solution
+    Multer-GridFS-Storage - uploader of img/obj to the local persistence
+    Helmet - request safety
+    Morgan - logging
+
+   <--------->
+    Frontend
+   <--------->
+
+    React.js - frontend framework/lib
+    React Router - navigation
+    Formik - form provider
+    Yup - form validation
+    Redux - state management
+    Redux Toolkit - wrapper for easier state management
+    Redux Persist - local storage for state (alternative for cache)
+    React Dropzone - drag & drop lib
+
+[----------------]
+ Folder structure:
+[----------------]
+
+- Client (frontend):
+    - scenes -> bigger components that are making fully functional pages
+    - components -> reusable functional components
+    - state -> redux/redux-toolkit info 
+
+- Server (backend):
+    - models -> data models of the system
+    - routes -> all the accessible endpoints
+    - controllers -> the logic of the request
+    - middleware -> all the middleware functions (in this case only verifyToken for JWT authorization)
+    - public -> global local info (images in this case)
+    - data -> fake demo data for DB
+
+
+! Custom files !
+<----------------------------------------------------------------------------------------------------------------->
+|               Location                |                       Description                                       |
+<----------------------------------------------------------------------------------------------------------------->
+|   client -> jsconfig.json             |       Will easier the import of different objects                       |
+<----------------------------------------------------------------------------------------------------------------->
+
+For next bigger projects:
+    - When fullstack-ing, do make sure to design data models beforehand, saves a lot of problems later
+    - Even further deconstruct the components in more modular parts
+    - Write more wrapper functions for scaling and modularity
+    - Always refactor !
